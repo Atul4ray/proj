@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 const Header = () => {
     const pageScripts = () => {
         const script = document.createElement("script");
-
         script.src = "assets/js/jquery-3.6.0.min.js"
         script.src = "assets/js/popper.min.js"
         script.src = "assets/js/bootstrap.min.js"
@@ -27,39 +27,34 @@ const Header = () => {
     }, []);
     return (
         <>
+            <div className="cursor" />
+            <div className="cursor2" />
             <header className="position_top sticky">
                 <div className="container-fluid">
                     <div className="row align-items-center">
                         <div className="col col-sm-3 col-md-3 col-lg-3 col-xl-2">
                             <div className="logo">
-                                <a href="index.html"><img src="assets/img/logo.png" alt="" /></a>
+                                <a href="index.html"> <span><h2 style={{ color: '#d90a2c' }}>DM<span className='text-white d-inline'>ChaCha</span> </h2></span></a>
                             </div>
                         </div>
                         <div className="col col-sm-5 col-md-6 col-lg-6 col-xl-8 text-end">
                             <nav className="main-nav">
                                 <div className="mobile-menu-logo">
-                                    <a href="index.html"><img src="assets/img/logo.png" alt="" /></a>
+                                    <a href="index.html"> <h3><span style={{ color: '#d90a2c' }}>DM<span className='text-white d-inline'>Chacha</span> </span> </h3></a>
                                 </div>
                                 <ul>
-                                    <li className="has-child active">
-                                        <a href="index.html" className="active">Home</a>
+                                    <li><Link to="/">Home</Link></li>
+                                    <li><Link to="/about">About us</Link></li>
+                                    <li className="has-child">
+                                        <Link to="/services">Services</Link>
                                         <i className="bi bi-chevron-down" />
                                         <ul className="sub-menu">
-                                            <li><a href="index.html" className="active">Home 01</a></li>
-                                            <li><a href="index2.html">Home 02</a></li>
-                                            <li><a href="index3.html">Home 03</a></li>
+                                            <li><Link to="/webdesign">Web Design</Link></li>
+                                            <li><Link to="/digitalmarketing">Digital Merketing</Link></li>
+
                                         </ul>
                                     </li>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li className="has-child">
-                                        <a href="services.html">Services</a>
-                                        <i className="bi bi-chevron-down" />
-                                        <ul className="sub-menu">
-                                            <li><a href="services.html">Service</a></li>
-                                            <li><a href="service-details.html">Service Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li className="has-child">
+                                    {/* <li className="has-child">
                                         <a href="project.html">Projects</a>
                                         <i className="bi bi-chevron-down" />
                                         <ul className="sub-menu">
@@ -67,29 +62,12 @@ const Header = () => {
                                             <li><a href="project2.html">Project masonry</a></li>
                                             <li><a href="project-details.html">Project Details</a></li>
                                         </ul>
-                                    </li>
-                                    <li className="has-child">
-                                        <a href="blog.html">Blogs</a>
-                                        <i className="bi bi-chevron-down" />
-                                        <ul className="sub-menu">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog2.html">Blog standard</a></li>
-                                            <li><a href="blog_details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li className="has-child">
-                                        <a href="#">Pages</a>
-                                        <i className="bi bi-chevron-down" />
-                                        <ul className="sub-menu">
-                                            <li><a href="commingsoon.html">Comming soon</a></li>
-                                            <li><a href="error.html">Error 404</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    </li> */}
+                                    <li><Link to="/contact">Contact us</Link></li>
                                 </ul>
                                 <div className="get-quate dn">
                                     <div className="cmn-btn">
-                                        <a href="contact.html">Get a quote</a>
+                                        <Link to="/contact">Get a quote</Link>
                                     </div>
                                 </div>
                             </nav>
@@ -104,7 +82,7 @@ const Header = () => {
                         <div className="col-12 col-sm-4 col-md-3 col-lg-3 col-xl-2 text-end">
                             <div className="get-quate">
                                 <div className="cmn-btn">
-                                    <a href="contact.html">Get a quote</a>
+                                    <Link to="/contact">Get a quote</Link>
                                 </div>
                             </div>
                         </div>
